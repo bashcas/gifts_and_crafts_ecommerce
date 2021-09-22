@@ -1,19 +1,19 @@
 export const items = [
   {
     _id: "1",
-    image: "/images/image1.jpeg",
-    name: "Caja sorpresa",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Cajas",
     price: 89.99,
-    rating: 4.5,
+    rating: 3.5,
     numReviews: 12,
   },
   {
     _id: "2",
-    image: "/images/image2.jpeg",
-    name: "Caja sorpresa",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Cajas",
@@ -23,8 +23,8 @@ export const items = [
   },
   {
     _id: "3",
-    image: "/images/image3.jpeg",
-    name: "Caja sorpresa",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Cajas",
@@ -34,8 +34,8 @@ export const items = [
   },
   {
     _id: "4",
-    image: "/images/image4.jpeg",
-    name: "Caja sorpresa",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Cajas",
@@ -46,10 +46,175 @@ export const items = [
   {
     _id: "5",
     image: "/images/image5.jpg",
-    name: "Caja sorpresa",
+    name: "Ancheta personalizable con forma de corazón",
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Cajas",
+    price: 89.99,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "6",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
+    description:
+      "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
+    category: "Anchetas",
+    price: 89.99,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "7",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
+    description:
+      "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
+    category: "Anchetas",
+    price: 89.99,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "8",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
+    description:
+      "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
+    category: "Anchetas",
+    price: 89.99,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "9",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
+    description:
+      "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
+    category: "Anchetas",
+    price: 89.99,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "10",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
+    description:
+      "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
+    category: "Anchetas",
+    price: 89.99,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "11",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
+    description:
+      "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
+    category: "Globos",
+    price: 89.99,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "12",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
+    description:
+      "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
+    category: "Globos",
+    price: 89.99,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "13",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
+    description:
+      "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
+    category: "Globos",
+    price: 89.99,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "14",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
+    description:
+      "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
+    category: "Globos",
+    price: 89.99,
+    rating: 4,
+    numReviews: 12,
+  },
+  {
+    _id: "15",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
+    description:
+      "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
+    category: "Globos",
+    price: 89.99,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "16",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
+    description:
+      "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
+    category: "Cartas",
+    price: 89.99,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "17",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
+    description:
+      "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
+    category: "Cartas",
+    price: 89.99,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "18",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
+    description:
+      "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
+    category: "Cartas",
+    price: 89.99,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "19",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
+    description:
+      "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
+    category: "Cartas",
+    price: 89.99,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "20",
+    image: "/images/image5.jpg",
+    name: "Ancheta personalizable con forma de corazón",
+    description:
+      "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
+    category: "Cartas",
     price: 89.99,
     rating: 4.5,
     numReviews: 12,

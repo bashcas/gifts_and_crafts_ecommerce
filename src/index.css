@@ -1,5 +1,14 @@
 html {
   font-size: 62.5%;
+  --main: #0084ff;
+  --main-rgb: 0, 132, 255;
+  --headerBg: #a2d2ff;
+  --heroBg: #bde0fe;
+  --darkGray: #1c1c1c;
+  --gray: #464646;
+  --lightGray: #eeeeee;
+  --xlightGray: #afafaf;
+  --productBg: #f2faff;
 }
 * {
   margin: 0;

@@ -37,6 +37,7 @@ const FooterStyled = styled.footer`
   align-items: center;
   padding: 5em;
   gap: 10px;
+  margin-top: 30px;
   @media (min-width: 768px) {
     flex-direction: row;
   }

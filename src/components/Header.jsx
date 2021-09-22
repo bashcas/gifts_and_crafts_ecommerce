@@ -45,7 +45,7 @@ const StyledSearch = styled.input`
     color: ${COLORS.gray};
   }
   @media (min-width: 768px) {
-    font-size: ${SIZES.s};
+    font-size: calc(${SIZES.s} - 2px);
   }
 `
 
@@ -83,6 +83,10 @@ const SVGUser = styled(User)`
   @media (min-width: 768px) {
     transform: scale(1.4);
   }
+  &:hover > g > path {
+    fill: ${COLORS.darkGray};
+    transition: fill 0.1s ease-in;
+  }
 `
 
 const SVGHeart = styled(Heart)`
@@ -90,12 +94,20 @@ const SVGHeart = styled(Heart)`
   @media (min-width: 768px) {
     transform: scale(1.4);
   }
+  &:hover > path {
+    fill: ${COLORS.darkGray};
+    transition: fill 0.1s ease-in;
+  }
 `
 
 const SVGBag = styled(Bag)`
   cursor: pointer;
   @media (min-width: 768px) {
     transform: scale(1.4);
+  }
+  &:hover > path {
+    fill: ${COLORS.darkGray};
+    transition: fill 0.1s ease-in;
   }
 `
 

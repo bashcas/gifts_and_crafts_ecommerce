@@ -6,7 +6,7 @@ import whatsapp from "../assets/whatsapp.png"
 import tiktok from "../assets/tik-tok.png"
 
 const P = styled.p`
-  font-size: clamp(${SIZES.xs}, 3vw, ${SIZES.l});
+  font-size: clamp(${SIZES.xs}, 3vw, ${SIZES.s});
   cursor: pointer;
 `
 

@@ -1,0 +1,21 @@
+.rec.rec-arrow {
+  background-color: rgba(var(--main-rgb), 0.1);
+  color: var(--darkGray);
+}
+
+.rec.rec-arrow:hover:enabled,
+.rec.rec-arrow:focus:enabled {
+  background-color: var(--main);
+  color: #fff;
+}
+
+.rec.rec-dot:hover,
+.rec.rec-dot:focus {
+  cursor: pointer;
+  box-shadow: 0 0 1px 3px rgba(var(--main-rgb), 0.5);
+}
+
+.rec.rec-dot.rec-dot_active {
+  background-color: rgba(var(--main-rgb), 0.1);
+  box-shadow: 0 0 1px 3px var(--main);
+}
