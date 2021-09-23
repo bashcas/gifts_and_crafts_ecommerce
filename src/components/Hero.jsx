@@ -6,6 +6,7 @@ import { Carousel } from "react-responsive-carousel"
 import arrowLeft from "../assets/arrow-left.png"
 import arrowRight from "../assets/arrow-right.png"
 import useWindowSize from "../hooks/useWindowSize"
+import { useLocation } from "react-router-dom"
 
 const CarouselItem = styled.div`
   height: 350px;
@@ -22,6 +23,7 @@ const CarouselItemImage = styled.img`
 
 const Hero = () => {
   const { width } = useWindowSize()
+  const { pathname } = useLocation()
   const arrowStyles = {
     position: "absolute",
     zIndex: 2,
@@ -56,22 +58,24 @@ const Hero = () => {
     )
 
   return (
-    <Carousel
-      infiniteLoop
-      autoPlay
-      showThumbs={false}
-      showStatus={false}
-      showArrows={width > 1000}
-      renderArrowPrev={customArrowPrev}
-      renderArrowNext={customArrowNext}
-      emulateTouch
-    >
-      {items.map((item, idx) => (
-        <CarouselItem key={idx}>
-          <CarouselItemImage src={item.image} alt={item.description} />
-        </CarouselItem>
-      ))}
-    </Carousel>
+    pathname === "/" && (
+      <Carousel
+        infiniteLoop
+        autoPlay
+        showThumbs={false}
+        showStatus={false}
+        showArrows={width > 1000}
+        renderArrowPrev={customArrowPrev}
+        renderArrowNext={customArrowNext}
+        emulateTouch
+      >
+        {items.map((item, idx) => (
+          <CarouselItem key={idx}>
+            <CarouselItemImage src={item.image} alt={item.description} />
+          </CarouselItem>
+        ))}
+      </Carousel>
+    )
   )
 }
 

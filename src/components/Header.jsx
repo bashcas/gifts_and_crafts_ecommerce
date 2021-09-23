@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import styled from "styled-components"
 import { COLORS, SIZES } from "../constants"
 import { ReactComponent as Menu } from "../assets/menu.svg"
@@ -7,6 +7,8 @@ import { ReactComponent as Heart } from "../assets/heart.svg"
 import { ReactComponent as Bag } from "../assets/bag.svg"
 import logo from "../assets/logo.png"
 import useWindowSize from "../hooks/useWindowSize"
+import Input from "../styled-components/Input"
+import { Link } from "react-router-dom"
 
 const FlexContainer = styled.div`
   display: flex;
@@ -36,7 +38,7 @@ const StyledHeaderContent = styled(FlexContainer)`
 const StyledSearch = styled.input`
   font-size: ${SIZES.xs};
   background-color: ${COLORS.lightGray};
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   outline: none;
   padding: 0.25em 1em;
@@ -44,8 +46,10 @@ const StyledSearch = styled.input`
   &::placeholder {
     color: ${COLORS.gray};
   }
-  @media (min-width: 768px) {
-    font-size: calc(${SIZES.s} - 2px);
+  &:focus {
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 132, 255, 1);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0, 132, 255, 1);
+    box-shadow: 0px 0px 3px 0px rgba(0, 132, 255, 1);
   }
 `
 
@@ -81,7 +85,7 @@ const Logo = styled.img`
 const SVGUser = styled(User)`
   cursor: pointer;
   @media (min-width: 768px) {
-    transform: scale(1.4);
+    transform: scale(1.3);
   }
   &:hover > g > path {
     fill: ${COLORS.darkGray};
@@ -92,7 +96,7 @@ const SVGUser = styled(User)`
 const SVGHeart = styled(Heart)`
   cursor: pointer;
   @media (min-width: 768px) {
-    transform: scale(1.4);
+    transform: scale(1.3);
   }
   &:hover > path {
     fill: ${COLORS.darkGray};
@@ -103,18 +107,55 @@ const SVGHeart = styled(Heart)`
 const SVGBag = styled(Bag)`
   cursor: pointer;
   @media (min-width: 768px) {
-    transform: scale(1.4);
+    transform: scale(1.3);
   }
   &:hover > path {
     fill: ${COLORS.darkGray};
     transition: fill 0.1s ease-in;
   }
 `
+const SVGIconContainer = styled.div`
+  height: 30px;
+  display: grid;
+  place-content: center;
+`
+
+const LoginModal = styled.div`
+  position: absolute;
+  background-color: #ffffff;
+  padding: 20px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  top: calc(100% + 1rem);
+  right: 0;
+  opacity: 0;
+  border-radius: 10px;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: transform 150ms ease-in-out, opacity 150ms ease-in-out;
+  s & > p {
+    font-size: ${SIZES.xs};
+  }
+`
 
 const Header = () => {
   const { width } = useWindowSize()
   const [isMobile] = useState(width <= 768)
+  const loginModalRef = useRef(null)
 
+  const handleMouseClickOnUserIcon = () => {
+    if (loginModalRef.current.style.pointerEvents === "auto") {
+      loginModalRef.current.style.pointerEvents = "none"
+      loginModalRef.current.style.transform = "translateY(-10px)"
+      loginModalRef.current.style.opacity = "0"
+    } else {
+      loginModalRef.current.style.transform = "translateY(0)"
+      loginModalRef.current.style.opacity = "1"
+      loginModalRef.current.style.pointerEvents = "auto"
+    }
+  }
   return (
     <StyledHeader>
       <StyledHeaderContent>
@@ -129,15 +170,63 @@ const Header = () => {
         <StyledSearchContainer>
           <StyledSearch placeholder="Buscar..." />
         </StyledSearchContainer>
-        <FlexContainer gap={isMobile ? "5px" : "10px"}>
-          <SVGUser />
+        <FlexContainer
+          gap={isMobile ? "5px" : "10px"}
+          style={{ position: "relative" }}
+        >
+          <SVGIconContainer>
+            <SVGUser
+              title="Login into your costumer account"
+              onClick={handleMouseClickOnUserIcon}
+            />
+          </SVGIconContainer>
+
           <StyledSpan>|</StyledSpan>
-          <SVGHeart />
+          <SVGIconContainer>
+            <Link to="/favorites">
+              <div style={{ height: "17px" }}>
+                <SVGHeart title="Favorite products" />
+              </div>
+            </Link>
+          </SVGIconContainer>
+
           <StyledSpan>|</StyledSpan>
-          <FlexContainer gap={isMobile ? "3px" : "6px"}>
-            <SVGBag />
-            <StyledCounter>0</StyledCounter>
-          </FlexContainer>
+          <SVGIconContainer>
+            <Link to="/cart" style={{ textDecoration: "none" }}>
+              <FlexContainer gap={isMobile ? "3px" : "6px"}>
+                <SVGBag />
+                <StyledCounter>0</StyledCounter>
+              </FlexContainer>
+            </Link>
+          </SVGIconContainer>
+
+          <LoginModal ref={loginModalRef}>
+            <Link to="/login">
+              <Input
+                type="button"
+                value="Iniciar Sesión"
+                padding="0.5em 7em"
+                bgColor={COLORS.darkGray}
+                fontColor={"#CECECE"}
+                hover
+                title="Log in to your costumer account"
+              />
+            </Link>
+
+            <hr />
+            <p style={{ fontSize: SIZES.xs }}>¿No tienes cuenta aún?</p>
+            <Link to="/register">
+              <Input
+                type="button"
+                value="Regístrate"
+                padding="0.5em 7em"
+                bgColor={COLORS.darkGray}
+                fontColor={"#CECECE"}
+                hover
+                title="Register"
+              />
+            </Link>
+          </LoginModal>
         </FlexContainer>
       </StyledHeaderContent>
     </StyledHeader>

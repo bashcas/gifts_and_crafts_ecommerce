@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { COLORS, SIZES } from "../constants"
 import Rating from "./Rating"
 import Heart from "./Heart"
+import { Link } from "react-router-dom"
 
 const ProductContainer = styled.div`
   background-color: ${COLORS.productBg};
@@ -66,25 +67,25 @@ const Product = ({
   numReviews,
 }) => {
   return (
-    <a href={`/product/${_id}`} style={{ textDecoration: "none" }}>
-      <ProductContainer>
+    <ProductContainer>
+      <Link to={`/product/${_id}`} style={{ textDecoration: "none" }}>
         <ImageContainer>
           <Image src={image} alt={alt} />
         </ImageContainer>
-        <DataContainer>
-          <H4>{name}</H4>
-          <Rating
-            value={rating}
-            text={`${numReviews} reviews`}
-            color={"#f8e825"}
-          />
-          <FlexContainer>
-            <Price>{price}</Price>
-            <Heart />
-          </FlexContainer>
-        </DataContainer>
-      </ProductContainer>
-    </a>
+      </Link>
+      <DataContainer>
+        <H4>{name}</H4>
+        <Rating
+          value={rating}
+          text={`${numReviews} reviews`}
+          color={"#f8e825"}
+        />
+        <FlexContainer>
+          <Price>{price}</Price>
+          <Heart />
+        </FlexContainer>
+      </DataContainer>
+    </ProductContainer>
   )
 }
 

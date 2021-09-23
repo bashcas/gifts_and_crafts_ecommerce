@@ -4,7 +4,9 @@ import Hero from "./components/Hero"
 import Footer from "./components/Footer"
 import Contact from "./components/Contact"
 import HomeScreen from "./screens/HomeScreen"
+import ProductScreen from "./screens/ProductScreen"
 import styled from "styled-components"
+import { Route, BrowserRouter } from "react-router-dom"
 
 const Main = styled.main`
   padding: 2em;
@@ -18,16 +20,17 @@ const Main = styled.main`
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
       <Nav />
-      <Hero />
+      {window.location.pathname === "/" && <Hero />}
       <Main>
-        <HomeScreen></HomeScreen>
+        <Route component={HomeScreen} path="/" exact />
+        <Route component={ProductScreen} path="/product/:id" exact />
       </Main>
       <Footer />
       <Contact />
-    </>
+    </BrowserRouter>
   )
 }
 

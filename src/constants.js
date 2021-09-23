@@ -9,6 +9,7 @@ export const COLORS = {
   productBg: "#F2FAFF",
 }
 export const SIZES = {
+  xxs: "1.4rem",
   xs: "1.6rem",
   s: "2rem",
   m: "2.4rem",

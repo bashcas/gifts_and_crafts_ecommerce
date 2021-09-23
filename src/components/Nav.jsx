@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { COLORS, SIZES } from "../constants"
+import { Link } from "react-router-dom"
 
 const NavStyled = styled.nav`
   display: none;
@@ -26,11 +27,20 @@ const ListItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 100ms ease-in;
+  cursor: pointer;
+  &:hover {
+    background-color: ${COLORS.headerBg};
+  }
 `
 
-const Anchor = styled.a`
+const LinkStyled = styled(Link)`
   font-size: ${SIZES.xs};
   text-decoration: none;
+  transition: color 100ms ease-in;
+  &:hover {
+    color: ${COLORS.darkGray};
+  }
 `
 
 const Nav = () => {
@@ -38,16 +48,16 @@ const Nav = () => {
     <NavStyled>
       <StyledList>
         <ListItem>
-          <Anchor href="">Cajas dulceras</Anchor>
+          <LinkStyled to="/cajas">Cajas dulceras</LinkStyled>
         </ListItem>
         <ListItem>
-          <Anchor href="">Anchetas</Anchor>
+          <LinkStyled to="/anchetas">Anchetas</LinkStyled>
         </ListItem>
         <ListItem>
-          <Anchor href="">Globos Burbuja</Anchor>
+          <LinkStyled to="/globos">Globos burbuja</LinkStyled>
         </ListItem>
         <ListItem>
-          <Anchor href="">Cartas</Anchor>
+          <LinkStyled to="/cartas">Cartas</LinkStyled>
         </ListItem>
       </StyledList>
     </NavStyled>
