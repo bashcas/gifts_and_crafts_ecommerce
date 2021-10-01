@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react"
+import { emitCustomEvent, useCustomEventListener } from "react-custom-events"
 import { items } from "../mocks/carouselItems"
 import styled from "styled-components"
 import { SIZES, COLORS } from "../constants"
 import Rating from "../components/Rating"
 import CustomCarousel from "../components/CustomCarousel"
+import Modal from "../components/Modal"
 
 const ImageContainer = styled.div`
   width: 90vw;
@@ -59,41 +61,78 @@ const Option = styled.div`
   }
 `
 
+const FlexContainerList = styled.ul`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: ${(props) => props.gap || "0px"};
+  list-style: none;
+`
+
+const Size = styled.li`
+  font-size: ${SIZES.s};
+  padding: 8px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+`
+
 const ProductScreen = ({ match, history }) => {
   const [size, setSize] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }, [])
 
+  const handleClickOnOption = () => {
+    setIsModalOpen(true)
+    emitCustomEvent("modal-open")
+  }
+
+  useCustomEventListener("modal-closed", () => {
+    setIsModalOpen(false)
+  })
+
   const product = items.find((item) => item._id === match.params.id)
   return (
-    <div>
-      <GoBack onClick={history.goBack}>Volver</GoBack>
-      <Name>{product.name}</Name>
-      <Rating
-        marginBottom="20px"
-        width="17px"
-        value={product.rating}
-        text={`${product.numReviews} reviews`}
-      />
+    <>
+      <div>
+        <GoBack onClick={history.goBack}>Volver</GoBack>
+        <Name>{product.name}</Name>
+        <Rating
+          marginBottom="20px"
+          width="17px"
+          value={product.rating}
+          text={`${product.numReviews} reviews`}
+        />
 
-      <ImageContainer>
-        <img src={product.image} alt={product.alt} />
-      </ImageContainer>
-      <OptionsContainer>
-        <Option>
-          <p>Tamaño: </p>
-          <strong>
-            {size === null ? "Por favor, elige una opción" : size}
-          </strong>
-        </Option>
-      </OptionsContainer>
-      <OtherProductsTitle>Otros productos similares</OtherProductsTitle>
-      <CustomCarousel
-        products={items.filter((item) => item.category === product.category)}
-      ></CustomCarousel>
-    </div>
+        <ImageContainer>
+          <img src={product.image} alt={product.alt} />
+        </ImageContainer>
+        <OptionsContainer>
+          {product.sizeOptions && (
+            <Option onClick={handleClickOnOption}>
+              <p>Tamaño: </p>
+              <strong>
+                {size === null ? "Por favor, elige una opción" : size}
+              </strong>
+            </Option>
+          )}
+        </OptionsContainer>
+        <OtherProductsTitle>Otros productos similares</OtherProductsTitle>
+        <CustomCarousel
+          products={items.filter((item) => item.category === product.category)}
+        ></CustomCarousel>
+      </div>
+      <Modal open={isModalOpen}>
+        <div>Tamaño:</div>
+        <FlexContainerList gap={"15px"}>
+          {product.sizeOptions &&
+            product.sizeOptions.map((size) => (
+              <Size key={`size-${size}`}>{size}</Size>
+            ))}
+        </FlexContainerList>
+      </Modal>
+    </>
   )
 }
 

@@ -9,6 +9,7 @@ export const items = [
     price: 89.99,
     rating: 3.5,
     numReviews: 12,
+    sizeOptions: ["S", "M", "L"],
   },
   {
     _id: "2",
@@ -20,6 +21,7 @@ export const items = [
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
+    sizeOptions: ["XS", "S", "M", "L"],
   },
   {
     _id: "3",
@@ -31,6 +33,7 @@ export const items = [
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
+    sizeOptions: ["XS", "S", "M", "L"],
   },
   {
     _id: "4",
@@ -42,6 +45,7 @@ export const items = [
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
+    sizeOptions: ["XS", "S", "M", "L"],
   },
   {
     _id: "5",

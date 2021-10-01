@@ -7,6 +7,8 @@ import HomeScreen from "./screens/HomeScreen"
 import ProductScreen from "./screens/ProductScreen"
 import styled from "styled-components"
 import { Route, BrowserRouter } from "react-router-dom"
+import { useState } from "react"
+import { useCustomEventListener, emitCustomEvent } from "react-custom-events"
 
 const Main = styled.main`
   padding: 2em;
@@ -18,9 +20,32 @@ const Main = styled.main`
   }
 `
 
+const BlurBackground = styled.div`
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 10;
+`
+
 function App() {
+  const [blurBackground, setBlurBackground] = useState(false)
+
+  useCustomEventListener("modal-open", () => {
+    setBlurBackground(true)
+  })
+
+  const handleClickOnBlurBackground = () => {
+    setBlurBackground(false)
+    emitCustomEvent("modal-closed")
+  }
+
   return (
     <BrowserRouter>
+      {blurBackground && (
+        <BlurBackground onClick={handleClickOnBlurBackground} />
+      )}
       <Header />
       <Nav />
       {window.location.pathname === "/" && <Hero />}
