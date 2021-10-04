@@ -40,7 +40,6 @@ function App() {
     setBlurBackground(false)
     emitCustomEvent("modal-closed")
   }
-
   return (
     <BrowserRouter>
       {blurBackground && (
@@ -48,7 +47,7 @@ function App() {
       )}
       <Header />
       <Nav />
-      {window.location.pathname === "/" && <Hero />}
+      <Hero />
       <Main>
         <Route component={HomeScreen} path="/" exact />
         <Route component={ProductScreen} path="/product/:id" exact />

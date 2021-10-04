@@ -3,17 +3,23 @@ import halfStar from "../assets/half-star.png"
 import wholeStar from "../assets/whole-star.png"
 import emptyStar from "../assets/empty-star.png"
 import styled from "styled-components"
-import { SIZES } from "../constants"
 
 const StyledSpan = styled.span`
-  font-size: ${SIZES.xxs};
+  font-size: var(--xxs);
   margin-left: 5px;
 `
 
 const Container = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: ${({ marginBottom }) => marginBottom || "0"};
+  /* margin: ${({ margin }) => margin};
+  width: ${({ width }) => width};
+  max-width: ${({ maxWidth }) => maxWidth};
+  margin-bottom: ${({ marginBottom }) => marginBottom};
+  grid-area: ${({ gridArea }) => gridArea};
+  @media (min-width: 1140px) {
+    margin: ${({ marginOnBigScreen }) => marginOnBigScreen};
+  } */
 `
 
 const Star = styled.img`
@@ -21,9 +27,28 @@ const Star = styled.img`
   height: ${({ widthX }) => widthX || "24px"};
 `
 
-const Rating = ({ value, text, width, marginBottom }) => {
+const Rating = ({
+  value,
+  text,
+  width,
+  // marginBottom,
+  // containerWidth,
+  // maxContainerWidth,
+  // margin,
+  // gridArea,
+  // marginOnBigScreen,
+  ...props
+}) => {
   return (
-    <Container marginBottom={marginBottom}>
+    <Container
+      // marginBottom={marginBottom}
+      // width={containerWidth}
+      // maxWidth={maxContainerWidth}
+      // margin={margin}
+      // gridArea={gridArea}
+      // marginOnBigScreen={marginOnBigScreen}
+      {...props}
+    >
       <span>
         <Star
           widthX={width}

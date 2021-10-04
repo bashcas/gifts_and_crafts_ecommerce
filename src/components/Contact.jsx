@@ -1,12 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import { SIZES } from "../constants"
 import instagram from "../assets/instagram.png"
 import whatsapp from "../assets/whatsapp.png"
 import tiktok from "../assets/tik-tok.png"
 
 const P = styled.p`
-  font-size: clamp(${SIZES.xs}, 3vw, ${SIZES.s});
+  font-size: clamp(var(--xs), 3vw, var(--s));
   cursor: pointer;
 `
 

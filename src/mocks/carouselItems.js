@@ -10,6 +10,13 @@ export const items = [
     rating: 3.5,
     numReviews: 12,
     sizeOptions: ["S", "M", "L"],
+    rellenoOptions: [
+      { name: "Gomitas", price: 500 },
+      { name: "Chocolates", price: 800 },
+      { name: "Flores naturales", price: 2000 },
+      { name: "Caramelos", price: 2500 },
+      { name: "Fotografias", price: 3000 },
+    ],
   },
   {
     _id: "2",
@@ -22,6 +29,13 @@ export const items = [
     rating: 4.5,
     numReviews: 12,
     sizeOptions: ["XS", "S", "M", "L"],
+    rellenoOptions: [
+      { name: "Gomitas", price: 500 },
+      { name: "Chocolates", price: 800 },
+      { name: "Flores naturales", price: 2000 },
+      { name: "Caramelos", price: 2500 },
+      { name: "Fotografias", price: 3000 },
+    ],
   },
   {
     _id: "3",
@@ -34,6 +48,13 @@ export const items = [
     rating: 4.5,
     numReviews: 12,
     sizeOptions: ["XS", "S", "M", "L"],
+    rellenoOptions: [
+      { name: "Gomitas", price: 500 },
+      { name: "Chocolates", price: 800 },
+      { name: "Flores naturales", price: 2000 },
+      { name: "Caramelos", price: 2500 },
+      { name: "Fotografias", price: 3000 },
+    ],
   },
   {
     _id: "4",
@@ -46,6 +67,13 @@ export const items = [
     rating: 4.5,
     numReviews: 12,
     sizeOptions: ["XS", "S", "M", "L"],
+    rellenoOptions: [
+      { name: "Gomitas", price: 500 },
+      { name: "Chocolates", price: 800 },
+      { name: "Flores naturales", price: 2000 },
+      { name: "Caramelos", price: 2500 },
+      { name: "Fotografias", price: 3000 },
+    ],
   },
   {
     _id: "5",
@@ -57,6 +85,14 @@ export const items = [
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
+    sizeOptions: ["XS", "S", "M", "L"],
+    rellenoOptions: [
+      { name: "Gomitas", price: 500 },
+      { name: "Chocolates", price: 800 },
+      { name: "Flores naturales", price: 2000 },
+      { name: "Caramelos", price: 2500 },
+      { name: "Fotografias", price: 3000 },
+    ],
   },
   {
     _id: "6",
@@ -65,6 +101,7 @@ export const items = [
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Anchetas",
+    sizeOptions: ["XS", "S", "M", "L"],
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
@@ -76,6 +113,7 @@ export const items = [
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Anchetas",
+    sizeOptions: ["XS", "S", "M", "L"],
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
@@ -87,6 +125,7 @@ export const items = [
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Anchetas",
+    sizeOptions: ["XS", "S", "M", "L"],
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
@@ -98,6 +137,7 @@ export const items = [
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Anchetas",
+    sizeOptions: ["XS", "S", "M", "L"],
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
@@ -109,6 +149,7 @@ export const items = [
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Anchetas",
+    sizeOptions: ["XS", "S", "M", "L"],
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
@@ -120,6 +161,7 @@ export const items = [
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Globos",
+    sizeOptions: ["XS", "S", "M", "L"],
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
@@ -131,6 +173,7 @@ export const items = [
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Globos",
+    sizeOptions: ["XS", "S", "M", "L"],
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
@@ -142,6 +185,7 @@ export const items = [
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Globos",
+    sizeOptions: ["XS", "S", "M", "L"],
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
@@ -153,6 +197,7 @@ export const items = [
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Globos",
+    sizeOptions: ["XS", "S", "M", "L"],
     price: 89.99,
     rating: 4,
     numReviews: 12,
@@ -164,6 +209,7 @@ export const items = [
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Globos",
+    sizeOptions: ["XS", "S", "M", "L"],
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
@@ -175,6 +221,7 @@ export const items = [
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Cartas",
+    sizeOptions: ["XS", "S", "M", "L"],
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
@@ -186,6 +233,7 @@ export const items = [
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Cartas",
+    sizeOptions: ["XS", "S", "M", "L"],
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
@@ -197,6 +245,7 @@ export const items = [
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Cartas",
+    sizeOptions: ["XS", "S", "M", "L"],
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
@@ -208,6 +257,7 @@ export const items = [
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Cartas",
+    sizeOptions: ["XS", "S", "M", "L"],
     price: 89.99,
     rating: 4.5,
     numReviews: 12,
@@ -219,6 +269,7 @@ export const items = [
     description:
       "Bluetooh technology lets you connect it with compatible devices wirelessly Hight-quality",
     category: "Cartas",
+    sizeOptions: ["XS", "S", "M", "L"],
     price: 89.99,
     rating: 4.5,
     numReviews: 12,

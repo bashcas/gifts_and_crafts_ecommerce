@@ -2,7 +2,7 @@ import React from "react"
 import { ReactComponent as Gift } from "../assets/gift.svg"
 import useWindowSize from "../hooks/useWindowSize"
 import styled from "styled-components"
-import { COLORS, SIZES } from "../constants"
+import { COLORS } from "../constants"
 import Input from "../styled-components/Input"
 
 const Form = styled.form`
@@ -14,7 +14,7 @@ const Form = styled.form`
 `
 
 const FooterStyled = styled.footer`
-  background-color: ${COLORS.headerBg};
+  background-color: var(--main);
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -28,13 +28,13 @@ const FooterStyled = styled.footer`
 `
 
 const H3 = styled.h3`
-  font-size: clamp(${SIZES.s}, 5vw, ${SIZES.xxl});
+  font-size: clamp(var(--s), 5vw, var(--xxl));
   text-align: center;
-  color: ${COLORS.darkGray};
+  color: var(--darkGray);
 `
 
 const P = styled.p`
-  font-size: ${SIZES.xs};
+  font-size: var(--xs);
   text-align: center;
   font-weight: 400;
 `

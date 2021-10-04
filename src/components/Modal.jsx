@@ -3,6 +3,9 @@ import styled from "styled-components"
 
 const StyledModal = styled.div`
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   width: 100%;
   z-index: 20;
   left: 0;

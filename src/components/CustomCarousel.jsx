@@ -6,15 +6,19 @@ import Product from "./Product"
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
-  { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+  { width: 550, itemsToShow: 2 },
   { width: 768, itemsToShow: 3 },
   { width: 1200, itemsToShow: 4 },
 ]
 
-const CustomCarousel = ({ products }) => {
+const CustomCarousel = ({ products, ...props }) => {
   const { width } = useWindowSize()
   return (
-    <Carousel breakPoints={breakPoints} showArrows={width > 480 ? true : false}>
+    <Carousel
+      breakPoints={breakPoints}
+      showArrows={width > 480 ? true : false}
+      {...props}
+    >
       {products.map((item) => (
         <Product
           key={item._id}

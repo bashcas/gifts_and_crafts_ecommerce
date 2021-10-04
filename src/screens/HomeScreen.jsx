@@ -1,15 +1,14 @@
 import React, { useState } from "react"
 import { items } from "../mocks/carouselItems"
-import { SIZES } from "../constants"
 import styled from "styled-components"
 import SeeMore from "../components/SeeMore"
 import CustomCarousel from "../components/CustomCarousel"
 
 const H2 = styled.h2`
-  font-size: ${SIZES.xl};
+  font-size: var(--xl);
   margin-bottom: 20px;
   @media (min-width: 768px) {
-    font-size: ${SIZES.xxl};
+    font-size: var(--xxl);
   }
 `
 
@@ -28,8 +27,6 @@ const HomeScreen = () => {
     globos: [...items.filter((item) => item.category === "Globos")],
     cartas: [...items.filter((item) => item.category === "Cartas")],
   })
-
-  console.log(products.anchetas)
 
   return (
     <div>

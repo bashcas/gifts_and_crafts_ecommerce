@@ -18,7 +18,7 @@ const FlexContainer = styled.div`
 `
 
 const StyledHeader = styled.header`
-  background-color: ${COLORS.headerBg};
+  background-color: var(--main);
   height: 50px;
   display: flex;
   justify-content: center;
@@ -36,15 +36,15 @@ const StyledHeaderContent = styled(FlexContainer)`
 `
 
 const StyledSearch = styled.input`
-  font-size: ${SIZES.xs};
-  background-color: ${COLORS.lightGray};
+  font-size: var(--xs);
+  background-color: var(--lightGray);
   border-radius: 10px;
   border: none;
   outline: none;
   padding: 0.25em 1em;
   width: 100%;
   &::placeholder {
-    color: ${COLORS.gray};
+    color: var(--gray);
   }
   &:focus {
     -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 132, 255, 1);
@@ -60,17 +60,13 @@ const StyledSearchContainer = styled.div`
 `
 
 const StyledSpan = styled.span`
-  font-size: ${SIZES.s};
-  @media (min-width: 768px) {
-    font-size: ${SIZES.s};
-  }
+  font-size: var(--s);
+  color: var(--gray);
 `
 
 const StyledCounter = styled.div`
-  font-size: ${SIZES.s};
-  @media (min-width: 768px) {
-    font-size: ${SIZES.s};
-  }
+  font-size: var(--s);
+  color: var(--darkGray);
 `
 
 const Logo = styled.img`
@@ -84,33 +80,45 @@ const Logo = styled.img`
 
 const SVGUser = styled(User)`
   cursor: pointer;
+  transition: all 100ms;
+  & > g > path {
+    fill: var(--gray);
+  }
   @media (min-width: 768px) {
     transform: scale(1.3);
   }
   &:hover > g > path {
-    fill: ${COLORS.darkGray};
+    fill: var(--darkGray);
     transition: fill 0.1s ease-in;
   }
 `
 
 const SVGHeart = styled(Heart)`
   cursor: pointer;
+  transition: all 100ms;
+  & > path {
+    fill: var(--gray);
+  }
   @media (min-width: 768px) {
     transform: scale(1.3);
   }
   &:hover > path {
-    fill: ${COLORS.darkGray};
+    fill: var(--darkGray);
     transition: fill 0.1s ease-in;
   }
 `
 
 const SVGBag = styled(Bag)`
   cursor: pointer;
+  transition: all 100ms;
   @media (min-width: 768px) {
     transform: scale(1.3);
   }
+  & > path {
+    fill: var(--gray);
+  }
   &:hover > path {
-    fill: ${COLORS.darkGray};
+    fill: var(--darkGray);
     transition: fill 0.1s ease-in;
   }
 `
@@ -136,7 +144,7 @@ const LoginModal = styled.div`
   transform: translateY(-10px);
   transition: transform 150ms ease-in-out, opacity 150ms ease-in-out;
   s & > p {
-    font-size: ${SIZES.xs};
+    font-size: var(--xs);
   }
 `
 
@@ -166,7 +174,10 @@ const Header = () => {
         ) : (
           ""
         )}
-        <Logo src={logo} alt="Logo" />
+        <Link to="/">
+          <Logo src={logo} alt="Logo" />
+        </Link>
+
         <StyledSearchContainer>
           <StyledSearch placeholder="Buscar..." />
         </StyledSearchContainer>

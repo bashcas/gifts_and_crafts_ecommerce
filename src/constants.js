@@ -1,12 +1,14 @@
 export const COLORS = {
-  main: "#0084ff",
-  headerBg: "#A2D2FF",
-  heroBg: "#BDE0FE",
+  main: "",
+  mainHover: "",
+  blue: "#63A1FF",
+  blueHover: "#428dff",
+  blueRgb: "99, 151, 255",
   darkGray: "#1C1C1C",
   gray: "#464646",
-  lightGray: "#EEEEEE",
-  xlightGray: "#AFAFAF",
-  productBg: "#F2FAFF",
+  lightGray: "#f5f5f5",
+  xlightGray: "#eeeeee",
+  productBg: "#fafdff",
 }
 export const SIZES = {
   xxs: "1.4rem",
